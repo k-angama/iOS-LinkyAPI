@@ -21,6 +21,8 @@ LinkyAPI requires the following:
 
 ## Installation
 
+### CocoaPods
+
 To install this framework using CocoaPods, add the following line to your Podfile:
 
 ```
@@ -28,6 +30,12 @@ pod 'LinkyAPI'
 ```
 
 Then run pod install in your terminal.
+
+### Swift Package Manager
+
+1. In Xcode, navigate in menu: File > Add Package Dependencies
+2. Add `git@github.com:k-angama/iOS-LinkyAPI.git`
+3. Click Add Package.
 
 
 ## Before Started

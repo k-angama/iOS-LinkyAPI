@@ -17,4 +17,7 @@
    <FileRef
       location = "group:LinkyAPI/LinkyAPI.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:">
+   </FileRef>
 </Workspace>
