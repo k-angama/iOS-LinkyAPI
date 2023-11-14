@@ -16,6 +16,9 @@
 		25306AC82A38733400F45EDC /* LinkyAPIExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AC72A38733400F45EDC /* LinkyAPIExampleTests.swift */; };
 		25306AD22A38733400F45EDC /* LinkyAPIExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AD12A38733400F45EDC /* LinkyAPIExampleUITests.swift */; };
 		25306AD42A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AD32A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift */; };
+		2553F12D2B03D4C600CC3CCD /* env.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2553F12B2B03D25400CC3CCD /* env.xcconfig */; };
+		2553F12E2B03D4C700CC3CCD /* env.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2553F12B2B03D25400CC3CCD /* env.xcconfig */; };
+		2553F12F2B03D4C700CC3CCD /* env.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2553F12B2B03D25400CC3CCD /* env.xcconfig */; };
 		257640F12A444E7600723503 /* LinkyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257640F02A444E7600723503 /* LinkyAPI.framework */; };
 		257640F22A444E7600723503 /* LinkyAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 257640F02A444E7600723503 /* LinkyAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2595FF862AFBD64B00C2582D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595FF852AFBD64B00C2582D /* Environment.swift */; };
@@ -73,6 +76,7 @@
 		25306ACD2A38733400F45EDC /* LinkyAPIExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkyAPIExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25306AD12A38733400F45EDC /* LinkyAPIExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyAPIExampleUITests.swift; sourceTree = "<group>"; };
 		25306AD32A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyAPIExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2553F12B2B03D25400CC3CCD /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
 		257640F02A444E7600723503 /* LinkyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LinkyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2595FF852AFBD64B00C2582D /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		25A39F372A51CEDC005AB826 /* ConsumptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionViewModel.swift; sourceTree = "<group>"; };
@@ -82,7 +86,6 @@
 		25A39F3F2A55A73A005AB826 /* ContentChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentChart.swift; sourceTree = "<group>"; };
 		25A39F422A58755C005AB826 /* Date+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extentions.swift"; sourceTree = "<group>"; };
 		25A39F442A587580005AB826 /* GeometryProxy+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeometryProxy+Extentions.swift"; sourceTree = "<group>"; };
-		25C516B82AFA338A00549CE8 /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +148,7 @@
 				25306AB92A38733400F45EDC /* Assets.xcassets */,
 				25306ABB2A38733400F45EDC /* LaunchScreen.storyboard */,
 				25306ABE2A38733400F45EDC /* Info.plist */,
-				25C516B82AFA338A00549CE8 /* env.xcconfig */,
+				2553F12B2B03D25400CC3CCD /* env.xcconfig */,
 			);
 			path = LinkyAPIExample;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2553F12D2B03D4C600CC3CCD /* env.xcconfig in Resources */,
 				25306ABD2A38733400F45EDC /* LaunchScreen.storyboard in Resources */,
 				25306ABA2A38733400F45EDC /* Assets.xcassets in Resources */,
 				25306AB82A38733200F45EDC /* Main.storyboard in Resources */,
@@ -319,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2553F12E2B03D4C700CC3CCD /* env.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2553F12F2B03D4C700CC3CCD /* env.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +524,6 @@
 		};
 		25306AD82A38733400F45EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25C516B82AFA338A00549CE8 /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -547,7 +552,6 @@
 		};
 		25306AD92A38733400F45EDC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25C516B82AFA338A00549CE8 /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
