@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LinkyAPI'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.swift_version    = "5.0"
   s.summary          = 'API for Linky smart meters.'
 
@@ -17,8 +17,8 @@ DESC
 
   s.ios.deployment_target = '16.4'
 
-  s.source_files = 'LinkyAPI/**/*.{swift}'
-  s.exclude_files = 'LinkyAPI/LinkyAPITests/**/*.{swift}'
+  s.source_files = 'Sources/LinkyAPI/**/*.{swift}'
+  s.exclude_files = 'Tests/LinkyAPITests/**/*.{swift}'
   
   s.frameworks = 'UIKit'
   

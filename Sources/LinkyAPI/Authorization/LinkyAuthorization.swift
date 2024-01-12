@@ -112,7 +112,7 @@ public class LinkyAuthorization {
     
     internal func displayWebViewScreen() {
         let nc = UINavigationController(
-            rootViewController: WebViewController(
+            rootViewController: LinkyWebViewController(
                 configuration: configuration,
                 account: account,
                 block: handleResponse)

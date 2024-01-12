@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 
-class WebViewController: UIViewController {
+class LinkyWebViewController: UIViewController {
     
     typealias WebViewBlock = (_ usagePointsId: String?, _ state: String?, _ error: Error?) -> Void
     var configuration: LinkyConfiguration!
@@ -71,15 +71,22 @@ class WebViewController: UIViewController {
     
     internal func handleWebViewResponse(_ response: HTTPURLResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
+        guard let redirectURI = configuration.redirectURI.formatted() else {
+            fatalError("LinkyAPI - Redirect URI format is invalid")
+        }
+        
         var url = response.url
         switch configuration.mode {
             case .sandbox(prm: let client):
-            url = URL(string: "http://\(configuration.redirectURI)?state=\(configuration.state)&usage_point_id=\(client.prm)")
+            url = redirectURI
+                .appending(queryItems: [URLQueryItem(name: "state", value: configuration.state)])
+                .appending(queryItems: [URLQueryItem(name: "usage_point_id", value: client.prm)])
+            
             case .production: break
         }
         
-        if let host = url?.host,
-           host.contains(configuration.redirectURI.absoluteString) && response.statusCode == 200 {
+        if let host = url?.host, let hostRedirectURI = redirectURI.host,
+           host.contains(hostRedirectURI) && response.statusCode == 200 {
             
             guard let url = url,
                   let urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false),
@@ -135,7 +142,7 @@ class WebViewController: UIViewController {
 }
 
 
-extension WebViewController: WKUIDelegate, WKNavigationDelegate {
+extension LinkyWebViewController: WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         indicator.stopAnimating()

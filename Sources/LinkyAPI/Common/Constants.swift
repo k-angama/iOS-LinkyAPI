@@ -17,7 +17,7 @@ struct Constants {
         static let usagePointId = "usage_point_id"
         static let nameDuration = "duration"
         static let nameResponseType = "response_type"
-        static let nameRedirectURI = "redirect_URI"
+        // static let nameRedirectURI = "redirect_URI"
         
         // Value Query
         static let valueResponseType = "code"

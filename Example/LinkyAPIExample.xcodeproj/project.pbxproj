@@ -16,9 +16,6 @@
 		25306AC82A38733400F45EDC /* LinkyAPIExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AC72A38733400F45EDC /* LinkyAPIExampleTests.swift */; };
 		25306AD22A38733400F45EDC /* LinkyAPIExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AD12A38733400F45EDC /* LinkyAPIExampleUITests.swift */; };
 		25306AD42A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AD32A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift */; };
-		2553F12D2B03D4C600CC3CCD /* env.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2553F12B2B03D25400CC3CCD /* env.xcconfig */; };
-		2553F12E2B03D4C700CC3CCD /* env.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2553F12B2B03D25400CC3CCD /* env.xcconfig */; };
-		2553F12F2B03D4C700CC3CCD /* env.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2553F12B2B03D25400CC3CCD /* env.xcconfig */; };
 		257640F12A444E7600723503 /* LinkyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257640F02A444E7600723503 /* LinkyAPI.framework */; };
 		257640F22A444E7600723503 /* LinkyAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 257640F02A444E7600723503 /* LinkyAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2595FF862AFBD64B00C2582D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595FF852AFBD64B00C2582D /* Environment.swift */; };
@@ -312,7 +309,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2553F12D2B03D4C600CC3CCD /* env.xcconfig in Resources */,
 				25306ABD2A38733400F45EDC /* LaunchScreen.storyboard in Resources */,
 				25306ABA2A38733400F45EDC /* Assets.xcassets in Resources */,
 				25306AB82A38733200F45EDC /* Main.storyboard in Resources */,
@@ -323,7 +319,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2553F12E2B03D4C700CC3CCD /* env.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +326,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2553F12F2B03D4C700CC3CCD /* env.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +404,7 @@
 /* Begin XCBuildConfiguration section */
 		25306AD52A38733400F45EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2553F12B2B03D25400CC3CCD /* env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -470,6 +465,7 @@
 		};
 		25306AD62A38733400F45EDC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2553F12B2B03D25400CC3CCD /* env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
