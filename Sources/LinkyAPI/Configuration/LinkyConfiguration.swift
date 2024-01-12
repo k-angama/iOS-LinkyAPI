@@ -49,7 +49,7 @@ public struct LinkyConfiguration {
             URLQueryItem(name: Constants.Config.nameState, value: state),
             URLQueryItem(name: Constants.Config.nameDuration, value: duration.durationCode),
             URLQueryItem(name: Constants.Config.nameResponseType, value: Constants.Config.valueResponseType),
-            //URLQueryItem(name: Constants.Config.nameRedirectURI, value: redirectURI.absoluteString),
+            // URLQueryItem(name: Constants.Config.nameRedirectURI, value: redirectURI.absoluteString),
         ]
     }
 }

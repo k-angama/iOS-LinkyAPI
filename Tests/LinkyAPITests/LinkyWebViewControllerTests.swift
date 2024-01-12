@@ -9,12 +9,12 @@ import XCTest
 @testable import LinkyAPI
 import WebKit
 
-final class WebViewControllerTests: XCTestCase {
+final class LinkyWebViewControllerTests: XCTestCase {
     
     let clientId = "832d-451c-9005"
     let clientSecret = "AfGT8-4f6d-a345-1208"
     
-    var webViewController: WebViewController!
+    var webViewController: LinkyWebViewController!
     var linkyConfig: LinkyConfiguration!
     var accountMock: LinkyAccount!
 
@@ -36,7 +36,7 @@ final class WebViewControllerTests: XCTestCase {
 
     func testWhenIndicatorViewIsDisplayed() throws {
    
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in }
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in }
         webViewController.loadView()
         
         XCTAssertEqual(webViewController.indicator.isAnimating, true)
@@ -51,7 +51,7 @@ final class WebViewControllerTests: XCTestCase {
         
         let exp = XCTestExpectation(description: "Success closure should be executed")
 
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in }
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in }
         let response = HTTPURLResponse(
             url: URL(string: "fake.url-redirect.com")!,
             statusCode: 200,
@@ -72,7 +72,7 @@ final class WebViewControllerTests: XCTestCase {
         let exp = XCTestExpectation(description: "Success closure should be executed")
         exp.expectedFulfillmentCount = 2
         
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
             let error = error as! LinkyAuthorizationError
             XCTAssertEqual(error, LinkyAuthorizationError.badRequest)
             XCTAssertEqual(usagePointsId, nil)
@@ -98,7 +98,7 @@ final class WebViewControllerTests: XCTestCase {
         
         let exp = XCTestExpectation(description: "Success closure should be executed")
         exp.expectedFulfillmentCount = 2
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
             let error = error as! LinkyAuthorizationError
             XCTAssertEqual(error, LinkyAuthorizationError.technicalError)
             XCTAssertEqual(usagePointsId, nil)
@@ -125,7 +125,7 @@ final class WebViewControllerTests: XCTestCase {
         
         let exp = XCTestExpectation(description: "Success closure should be executed")
         exp.expectedFulfillmentCount = 2
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
             let error = error as! LinkyAuthorizationError
             XCTAssertEqual(error, LinkyAuthorizationError.apiError)
             exp.fulfill()
@@ -150,7 +150,7 @@ final class WebViewControllerTests: XCTestCase {
         let pointsId = "5757GF6457G"
         let exp = XCTestExpectation(description: "Success closure should be executed")
         exp.expectedFulfillmentCount = 2
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { [weak self] usagePointsId, state, error in
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { [weak self] usagePointsId, state, error in
             let error = error as? LinkyAuthorizationError
             XCTAssertEqual(error, nil)
             XCTAssertEqual(usagePointsId, pointsId)
@@ -177,7 +177,7 @@ final class WebViewControllerTests: XCTestCase {
         
         let exp = XCTestExpectation(description: "Success closure should be executed")
         exp.expectedFulfillmentCount = 2
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
             let error = error as? LinkyAuthorizationError
             XCTAssertEqual(error, LinkyAuthorizationError.apiError)
             XCTAssertEqual(usagePointsId, nil)
@@ -204,7 +204,7 @@ final class WebViewControllerTests: XCTestCase {
         let pointsId = "azert"
         let exp = XCTestExpectation(description: "Success closure should be executed")
         accountMock.setUsagePointsId(pointsId)
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { [weak self] usagePointsId, state, error in
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { [weak self] usagePointsId, state, error in
             let error = error as? LinkyAuthorizationError
             XCTAssertEqual(error, nil)
             XCTAssertEqual(usagePointsId, pointsId)
@@ -235,7 +235,7 @@ final class WebViewControllerTests: XCTestCase {
         
         let exp = XCTestExpectation(description: "Success closure should be executed")
         exp.expectedFulfillmentCount = 2
-        webViewController = WebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
+        webViewController = LinkyWebViewController(configuration: linkyConfig, account: accountMock) { usagePointsId, state, error in
             let error = error as? LinkyAuthorizationError
             XCTAssertEqual(error, nil)
             XCTAssertEqual(usagePointsId, pointsId)
@@ -250,6 +250,28 @@ final class WebViewControllerTests: XCTestCase {
         }
         
         wait(for: [exp], timeout: 3)
+        
+    }
+    
+    func testInvalidRedirectURL() throws {
+        
+        let linkyConfig = LinkyConfiguration(
+            clientId: clientId,
+            clientSecret: clientSecret,
+            redirectURI: URL(string: "fake://")!,
+            mode: .sandbox(prm: .client1(.prm1))
+        )
+
+        webViewController = LinkyWebViewController(
+            configuration: linkyConfig,
+            account: accountMock,
+            block: { usagePointsId, state, error in })
+        
+        expectFatalError(expectedMessage: "LinkyAPI - Redirect URI format is invalid") {
+            self.webViewController.handleWebViewResponse(HTTPURLResponse()) { navigationResponsePolicy in
+                //
+            }
+        }
         
     }
 

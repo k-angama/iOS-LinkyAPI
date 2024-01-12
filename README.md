@@ -3,7 +3,7 @@
 The LinkyAPI Swift Library is a Swift package that provides a convenient way to access Linky's electricity consumption and production data through Enedis API. This library simplifies the process of obtaining user authorization, fetching consumption data.
 
 
-## Reatures
+## Features
 
 - API authorization process.
 - Retrieval of daily consumption, average power consumed, maximum consumption power, daily production, and average power produced.

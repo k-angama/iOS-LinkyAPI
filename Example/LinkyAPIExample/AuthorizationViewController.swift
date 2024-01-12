@@ -20,7 +20,7 @@ class AuthorizationViewController: UIViewController {
             clientId: Env.clientID,
             clientSecret: Env.clientSecret,
             redirectURI: URL(string: Env.redirectURI)!,
-            mode: .sandbox(prm: .client7(.prm2)),
+            mode: .sandbox(prm: .client1(.prm1)),
             duration: .day(value: 1)
         )
         linkyAuth = LinkyAuthorization(configuration: configuration)
