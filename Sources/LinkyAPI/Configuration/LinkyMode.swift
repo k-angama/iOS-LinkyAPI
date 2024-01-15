@@ -18,7 +18,7 @@ public enum LinkyMode {
         case .production:
             return "https://ext.prod.api.enedis.fr"
         case .sandbox:
-            return "https://ext.hml.api.enedis.fr"
+            return "https://ext.prod-sandbox.api.enedis.fr"
         }
     }
     

@@ -17,6 +17,8 @@
 		25306A952A38701B00F45EDC /* LinkyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25306A8A2A38701A00F45EDC /* LinkyAPI.framework */; };
 		25306A9A2A38701B00F45EDC /* LinkyAPIMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306A992A38701B00F45EDC /* LinkyAPIMapperTests.swift */; };
 		25306A9B2A38701B00F45EDC /* LinkyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 25306A8D2A38701A00F45EDC /* LinkyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		253B23E62B55C0D7005E5857 /* LinkyURLFormattedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B23E52B55C0D7005E5857 /* LinkyURLFormattedTests.swift */; };
+		253B23E82B55CB84005E5857 /* LinkyApp+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B23E72B55CB84005E5857 /* LinkyApp+Extentions.swift */; };
 		256E9CF82B51533E00FBE208 /* LinkyURL+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256E9CF72B51533E00FBE208 /* LinkyURL+Extentions.swift */; };
 		257640FA2A471D4100723503 /* LinkyServiceAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257640F92A471D4100723503 /* LinkyServiceAPITests.swift */; };
 		2595FF882AFBD9F300C2582D /* LinkySandboxPRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595FF872AFBD9F300C2582D /* LinkySandboxPRM.swift */; };
@@ -47,7 +49,6 @@
 		25A975F82A41DC13008C8EB8 /* LinkyAuthorizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A975F72A41DC13008C8EB8 /* LinkyAuthorizationTests.swift */; };
 		25A975FA2A41E4F1008C8EB8 /* LinkyServiceAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A975F92A41E4F1008C8EB8 /* LinkyServiceAPIMock.swift */; };
 		25BB50982A4D7F1C0091153F /* LinkyAPIErro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB50972A4D7F1C0091153F /* LinkyAPIErro.swift */; };
-		25D6A16A2B51481B00EFED26 /* LinkyURLFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D6A1692B51481B00EFED26 /* LinkyURLFormatted.swift */; };
 		25D6A16C2B514A0200EFED26 /* LinkyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D6A16B2B514A0200EFED26 /* LinkyWebViewController.swift */; };
 		25E1E8922A40A33400296D34 /* LinkyWebViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E1E8912A40A33400296D34 /* LinkyWebViewControllerTests.swift */; };
 		25EBD24A2A72C96B00542DFA /* LinkyConsumptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBD2492A72C96B00542DFA /* LinkyConsumptionTests.swift */; };
@@ -78,6 +79,8 @@
 		25306A8E2A38701A00F45EDC /* LinkyAPI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LinkyAPI.docc; sourceTree = "<group>"; };
 		25306A942A38701B00F45EDC /* LinkyAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkyAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25306A992A38701B00F45EDC /* LinkyAPIMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyAPIMapperTests.swift; sourceTree = "<group>"; };
+		253B23E52B55C0D7005E5857 /* LinkyURLFormattedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkyURLFormattedTests.swift; sourceTree = "<group>"; };
+		253B23E72B55CB84005E5857 /* LinkyApp+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkyApp+Extentions.swift"; sourceTree = "<group>"; };
 		256E9CF72B51533E00FBE208 /* LinkyURL+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkyURL+Extentions.swift"; sourceTree = "<group>"; };
 		257640F92A471D4100723503 /* LinkyServiceAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyServiceAPITests.swift; sourceTree = "<group>"; };
 		2595FF872AFBD9F300C2582D /* LinkySandboxPRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkySandboxPRM.swift; sourceTree = "<group>"; };
@@ -107,7 +110,6 @@
 		25A975F72A41DC13008C8EB8 /* LinkyAuthorizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyAuthorizationTests.swift; sourceTree = "<group>"; };
 		25A975F92A41E4F1008C8EB8 /* LinkyServiceAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyServiceAPIMock.swift; sourceTree = "<group>"; };
 		25BB50972A4D7F1C0091153F /* LinkyAPIErro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyAPIErro.swift; sourceTree = "<group>"; };
-		25D6A1692B51481B00EFED26 /* LinkyURLFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyURLFormatted.swift; sourceTree = "<group>"; };
 		25D6A16B2B514A0200EFED26 /* LinkyWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkyWebViewController.swift; path = ../../Sources/LinkyAPI/LinkyWebViewController.swift; sourceTree = "<group>"; };
 		25E1E8912A40A33400296D34 /* LinkyWebViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyWebViewControllerTests.swift; sourceTree = "<group>"; };
 		25EBD2492A72C96B00542DFA /* LinkyConsumptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyConsumptionTests.swift; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 				257640F92A471D4100723503 /* LinkyServiceAPITests.swift */,
 				25987EFA2A49E5DC0021F752 /* LinkyAuthorizationErrorTests.swift */,
 				25EBD2492A72C96B00542DFA /* LinkyConsumptionTests.swift */,
-				25D6A1692B51481B00EFED26 /* LinkyURLFormatted.swift */,
+				253B23E52B55C0D7005E5857 /* LinkyURLFormattedTests.swift */,
 				25050BA72A3B175A003AA902 /* XCTestCase+Extentions.swift */,
 			);
 			name = LinkyAPITests;
@@ -262,6 +264,7 @@
 				25F47CC62A7D3130006CEBCC /* LinkyDuration+Extentions.swift */,
 				25F47CC82A7D31B5006CEBCC /* LinkyMode+Extentions.swift */,
 				256E9CF72B51533E00FBE208 /* LinkyURL+Extentions.swift */,
+				253B23E72B55CB84005E5857 /* LinkyApp+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				25BB50982A4D7F1C0091153F /* LinkyAPIErro.swift in Sources */,
 				25987EE82A49CB230021F752 /* LinkyFatalError+Extentions.swift in Sources */,
 				25987EE12A49C9510021F752 /* LinkyAccessTokenRaw.swift in Sources */,
+				253B23E82B55CB84005E5857 /* LinkyApp+Extentions.swift in Sources */,
 				25987EEE2A49CD530021F752 /* LinkyConsumption.swift in Sources */,
 				25987EE32A49C9740021F752 /* LinkyAccessTokenMapper.swift in Sources */,
 				25987EDD2A49C91C0021F752 /* LinkyConsumptionEntity.swift in Sources */,
@@ -452,11 +456,11 @@
 				25A975F82A41DC13008C8EB8 /* LinkyAuthorizationTests.swift in Sources */,
 				25A975E72A41A5DD008C8EB8 /* LinkyAccountMock.swift in Sources */,
 				25987EFB2A49E5DC0021F752 /* LinkyAuthorizationErrorTests.swift in Sources */,
-				25D6A16A2B51481B00EFED26 /* LinkyURLFormatted.swift in Sources */,
 				25050BAA2A3B31B9003AA902 /* LinkyModeTests.swift in Sources */,
 				250CACBC2A3B031C00034525 /* LinkyDurationTests.swift in Sources */,
 				25050BAC2A3B3ED0003AA902 /* LinkyConfigurationTests.swift in Sources */,
 				25EBD24A2A72C96B00542DFA /* LinkyConsumptionTests.swift in Sources */,
+				253B23E62B55C0D7005E5857 /* LinkyURLFormattedTests.swift in Sources */,
 				25A975FA2A41E4F1008C8EB8 /* LinkyServiceAPIMock.swift in Sources */,
 				257640FA2A471D4100723503 /* LinkyServiceAPITests.swift in Sources */,
 			);

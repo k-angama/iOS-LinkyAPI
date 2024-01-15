@@ -117,12 +117,12 @@ public class LinkyAuthorization {
                 account: account,
                 block: handleResponse)
         )
-        getLastViewControler()?.present(nc, animated: true)
+        UIApplication.shared.topViewController?.present(nc, animated: true)
     }
     
     internal func dismissScreen() {
         DispatchQueue.main.async {
-            let viewController = self.getLastViewControler()
+            let viewController = UIApplication.shared.topViewController
             viewController?.dismiss(animated: true)
         }
     }
@@ -140,22 +140,6 @@ public class LinkyAuthorization {
                 self?.authorizationBlok?(error)
             }
         }
-    }
-    
-    
-    // MARK: - Private methode
-    
-    private func getLastViewControler() -> UIViewController? {
-        guard let scene = UIApplication.shared.connectedScenes.first,
-              let windowSceneDelegate = scene.delegate as? UIWindowSceneDelegate,
-              let window = windowSceneDelegate.window,
-              let rootViewController = window?.rootViewController else { return nil }
-        
-        if let navigationController = rootViewController as? UINavigationController {
-            return navigationController.topViewController?.presentedViewController ?? navigationController.topViewController
-        }
-        
-        return rootViewController
     }
     
 }

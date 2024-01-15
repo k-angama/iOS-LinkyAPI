@@ -8,7 +8,7 @@
 import XCTest
 @testable import LinkyAPI
 
-final class LinkyURLFormatted: XCTestCase {
+final class LinkyURLFormattedTests: XCTestCase {
 
     func testURLFormattedWithHostAndPath() throws {
         let url = URL(string: "https://fake.url-redirect.com/test/")?.formatted()

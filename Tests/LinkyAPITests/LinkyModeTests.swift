@@ -12,7 +12,7 @@ final class LinkyModeTests: XCTestCase {
 
     func testUrlSandboxEnvironment() throws {
         let mode: LinkyMode = .sandbox()
-        XCTAssertEqual(mode.baseUrlEnvironment,"https://ext.hml.api.enedis.fr")
+        XCTAssertEqual(mode.baseUrlEnvironment,"https://ext.prod-sandbox.api.enedis.fr")
     }
     
     func testUrlProdEnvironment() throws {
