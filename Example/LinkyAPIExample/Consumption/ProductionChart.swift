@@ -63,7 +63,7 @@ struct ProductionChart: View {
                         .padding(.horizontal)
                     }
                 } label: {
-                    Text("Produtcion")
+                    Text("Production")
                 }
             }
             .groupBoxStyle(.automatic)
