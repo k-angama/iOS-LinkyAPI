@@ -14,10 +14,13 @@ protocol LinkyAPI {
     func consumption(start: String, end: String, route: LinkyAPIRoute, block: @escaping (LinkyConsumptionRaw?, Error?) -> Void)
 }
 
-class LinkyServiceAPI: LinkyAPI {
+class LinkyServiceAPI: NSObject, LinkyAPI {
     
     var configuration: LinkyConfiguration
     var account: LinkyAccount
+    var sessionCached: LinkySessionCached {
+        LinkySessionCached()
+    }
     
     required init(configuration: LinkyConfiguration, account: LinkyAccount) {
         self.configuration = configuration
@@ -69,10 +72,15 @@ class LinkyServiceAPI: LinkyAPI {
     internal func dataTask<T: Codable>(
         with urlRequest: URLRequest,
         block: @escaping (T?, Error?) -> Void) {
-
-            URLSession.shared.dataTask(with: updateAccessToken(to: urlRequest)) { [weak self] data, response, error in
-                self?.dataTaskInterceptTokenResponse(with: urlRequest, response: response, data: data, error: error, block: block)
-            }.resume()
+            
+            sessionCached.dataTask(request: updateAccessToken(to: urlRequest)) { data, response, error in
+                self.dataTaskInterceptTokenResponse(
+                    with: urlRequest,
+                    response: response,
+                    data: data,
+                    error: nil, block: block
+                )
+            }
     }
     
     internal func dataTaskInterceptTokenResponse<T: Codable>(

@@ -155,7 +155,10 @@ final class LinkyAuthorizationTests: XCTestCase {
         let exp = XCTestExpectation(description: "Success closure should be executed")
         
         let account = LinkyAccountMock()
-        let linkyService = LinkyServiceAPIMock(configuration: linkyConfig, account: account)
+        let linkyService = LinkyServiceAPIMock(
+            configuration: linkyConfig,
+            account: account
+        )
         let authorization = LinkyAuthorizationMock(
             configuration: linkyConfig,
             account: account,
@@ -226,9 +229,11 @@ final class LinkyAuthorizationTests: XCTestCase {
         )
     }
     
-    
     private func setupALinkyAuthorizationMock(_ account: LinkyAccount) -> LinkyAuthorizationMock {
-        let linkyService = LinkyServiceAPIMock(configuration: linkyConfig, account: account)
+        let linkyService = LinkyServiceAPIMock(
+            configuration: linkyConfig,
+            account: account
+        )
         return LinkyAuthorizationMock(
             configuration: linkyConfig,
             account: account,

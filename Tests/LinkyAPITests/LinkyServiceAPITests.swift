@@ -21,8 +21,12 @@ final class LinkyServiceAPITests: XCTestCase {
             clientSecret: "AfGT8-4f6d-a345-1208",
             redirectURI: URL(string: "fake.url-redirect.com")!
         )
-        service = LinkyServiceAPIImplMock(configuration: linkyConfig, account: account)
+        service = LinkyServiceAPIImplMock(
+            configuration: linkyConfig, 
+            account: account
+        )
         url = URL(string: "http://fake.url.com\(LinkyAPIRoute.dailyConsumption)")!
+        
     }
 
     override func tearDownWithError() throws {
