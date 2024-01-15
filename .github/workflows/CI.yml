@@ -1,0 +1,23 @@
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build and Test test scheme
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Select Xcode
+        run: sudo xcode-select -s "/Applications/Xcode_14.2.0.app" && /usr/bin/xcodebuild -version
+      - name: Test
+        env:
+          scheme: ${{ 'LinkyAPI (LinkyAPI project)' }}
+          name: ${{ 'iPhone 14' }}
+        run: |
+          xcodebuild -scheme "$scheme" -workspace LinkyAPIWorkspace.xcworkspace test -sdk iphonesimulator -destination "name=$name" | xcpretty && exit ${PIPESTATUS[0]}
+      - name: Test Cocopoad
+        run: |
+          pod lib lint --verbose
