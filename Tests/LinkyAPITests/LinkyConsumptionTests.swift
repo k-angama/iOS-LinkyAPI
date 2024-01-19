@@ -28,7 +28,10 @@ final class LinkyConsumptionTests: XCTestCase {
             clientSecret: "AfGT8-4f6d-a345-1208",
             redirectURI: URL(string: "fake.url-redirect.com")!
         )
-        let linkyService = LinkyServiceAPIImplMock(configuration: linkyConfig, account: account)
+        let linkyService = LinkyServiceAPIImplMock(
+            configuration: linkyConfig,
+            account: account
+        )
         linkyConsumption = LinkyConsumption.shared
         linkyConsumption.linkyAPI = linkyService
     }

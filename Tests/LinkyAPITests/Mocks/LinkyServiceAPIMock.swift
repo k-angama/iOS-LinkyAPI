@@ -38,8 +38,6 @@ class LinkyServiceAPIMock: LinkyAPI {
         block(accessToken, accessTokenError)
     }
     
-    func consumption(start: String, end: String, route: LinkyAPIRoute, block: @escaping (LinkyConsumptionRaw?, Error?) -> Void) {
-        //
-    }
+    func consumption(start: String, end: String, route: LinkyAPIRoute, block: @escaping (LinkyConsumptionRaw?, Error?) -> Void) {}
     
 }
