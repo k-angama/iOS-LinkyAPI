@@ -14,4 +14,5 @@ enum LinkyAPIRoute: String {
     case maxpowerConsumption = "/metering_data_dcmp/v5/daily_consumption_max_power"
     case dailyprodConsumption = "/metering_data_dp/v5/daily_production"
     case loadcurveprodConsumption = "/metering_data_plc/v5/production_load_curve"
+    case customerContracts = "/customers_upc/v5/usage_points/contracts"
 }

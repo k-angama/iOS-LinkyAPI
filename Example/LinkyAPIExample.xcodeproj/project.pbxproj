@@ -16,6 +16,8 @@
 		25306AC82A38733400F45EDC /* LinkyAPIExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AC72A38733400F45EDC /* LinkyAPIExampleTests.swift */; };
 		25306AD22A38733400F45EDC /* LinkyAPIExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AD12A38733400F45EDC /* LinkyAPIExampleUITests.swift */; };
 		25306AD42A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25306AD32A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift */; };
+		255E19362B680B0600555B2D /* ContractsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255E19352B680B0600555B2D /* ContractsView.swift */; };
+		255E19382B680B2D00555B2D /* ContractsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255E19372B680B2D00555B2D /* ContractsViewModel.swift */; };
 		257640F12A444E7600723503 /* LinkyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257640F02A444E7600723503 /* LinkyAPI.framework */; };
 		257640F22A444E7600723503 /* LinkyAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 257640F02A444E7600723503 /* LinkyAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2595FF862AFBD64B00C2582D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595FF852AFBD64B00C2582D /* Environment.swift */; };
@@ -74,6 +76,8 @@
 		25306AD12A38733400F45EDC /* LinkyAPIExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyAPIExampleUITests.swift; sourceTree = "<group>"; };
 		25306AD32A38733400F45EDC /* LinkyAPIExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkyAPIExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2553F12B2B03D25400CC3CCD /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
+		255E19352B680B0600555B2D /* ContractsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsView.swift; sourceTree = "<group>"; };
+		255E19372B680B2D00555B2D /* ContractsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractsViewModel.swift; sourceTree = "<group>"; };
 		257640F02A444E7600723503 /* LinkyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LinkyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2595FF852AFBD64B00C2582D /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		25A39F372A51CEDC005AB826 /* ConsumptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 				25A39F372A51CEDC005AB826 /* ConsumptionViewModel.swift */,
 				25A39F3B2A51D86E005AB826 /* ProductionChart.swift */,
 				25A39F3D2A51E0FA005AB826 /* productionViewModel.swift */,
+				255E19352B680B0600555B2D /* ContractsView.swift */,
+				255E19372B680B2D00555B2D /* ContractsViewModel.swift */,
 			);
 			path = Consumption;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255E19382B680B2D00555B2D /* ContractsViewModel.swift in Sources */,
 				25A39F382A51CEDC005AB826 /* ConsumptionViewModel.swift in Sources */,
 				25306AB52A38733200F45EDC /* AuthorizationViewController.swift in Sources */,
 				25306AB12A38733200F45EDC /* AppDelegate.swift in Sources */,
@@ -346,6 +353,7 @@
 				2595FF862AFBD64B00C2582D /* Environment.swift in Sources */,
 				25A39F452A587580005AB826 /* GeometryProxy+Extentions.swift in Sources */,
 				25A39F3C2A51D86E005AB826 /* ProductionChart.swift in Sources */,
+				255E19362B680B0600555B2D /* ContractsView.swift in Sources */,
 				25A39F3E2A51E0FA005AB826 /* productionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

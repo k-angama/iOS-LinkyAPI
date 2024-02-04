@@ -12,6 +12,7 @@ protocol LinkyAPI {
     init(configuration: LinkyConfiguration, account: LinkyAccount)
     func accessToken(block: @escaping (_ accessToken: LinkyAccessTokenRaw?, _ error: Error?) -> Void)
     func consumption(start: String, end: String, route: LinkyAPIRoute, block: @escaping (LinkyConsumptionRaw?, Error?) -> Void)
+    func customer(route: LinkyAPIRoute, block: @escaping (LinkyCustomerRaw?, Error?) -> Void)
 }
 
 class LinkyServiceAPI: LinkyAPI {
@@ -52,7 +53,10 @@ class LinkyServiceAPI: LinkyAPI {
             return
         }
         
-        guard var urlComps = URLComponents(string: "\(configuration.mode.baseUrlEnvironment)\(route.rawValue)")  else { return }
+        guard var urlComps = URLComponents(string: "\(configuration.mode.baseUrlEnvironment)\(route.rawValue)")  else {
+            block(nil, LinkyAPIErro.invalidRequest)
+            return
+        }
         urlComps.queryItems = [
             URLQueryItem(name: "usage_point_id", value: account.getUsagePointsId()),
             URLQueryItem(name: "start", value: start),
@@ -64,6 +68,22 @@ class LinkyServiceAPI: LinkyAPI {
         
         dataTask(with: urlRequest, block: block)
         
+    }
+    
+    func customer(route: LinkyAPIRoute, block: @escaping (LinkyCustomerRaw?, Error?) -> Void) {
+        guard var urlComps = URLComponents(string: "\(configuration.mode.baseUrlEnvironment)\(route.rawValue)") else {
+            block(nil, LinkyAPIErro.invalidRequest)
+            return
+        }
+        urlComps.queryItems = [
+            URLQueryItem(name: "usage_point_id", value: account.getUsagePointsId()),
+        ]
+        
+        var urlRequest = URLRequest(url: urlComps.url!)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.httpMethod = "GET"
+        
+        dataTask(with: urlRequest, block: block)
     }
 
     internal func dataTask<T: Codable>(

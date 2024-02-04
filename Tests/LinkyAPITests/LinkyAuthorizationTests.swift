@@ -164,13 +164,11 @@ final class LinkyAuthorizationTests: XCTestCase {
         authorization.isSuperHandleAccessToken = true
         
         let token = "1234"
-        linkyService.setAccessToken(
-            token: LinkyAccessTokenRaw(
-                access_token: "1234",
-                token_type: "Bearer",
-                expires_in: 12600,
-                scope: ""
-            )
+        linkyService.accessToken = LinkyAccessTokenRaw(
+            access_token: "1234",
+            token_type: "Bearer",
+            expires_in: 12600,
+            scope: ""
         )
         
         authorization.authorization { error in

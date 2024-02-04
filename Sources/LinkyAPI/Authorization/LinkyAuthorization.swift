@@ -89,6 +89,7 @@ public class LinkyAuthorization {
         self.account = account
         self.serviceAPI = serviceAPI
         LinkyConsumption.shared.linkyAPI = serviceAPI
+        LinkyCustomer.shared.linkyAPI = serviceAPI
     }
     
     internal func handleResponse(usagePointsId: String?, state: String?, error: Error?) {
