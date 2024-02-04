@@ -15,6 +15,8 @@ struct ContentChart: View {
         NavigationStack {
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 20) {
+                    ContractsView()
+                    Spacer()
                     ConsumptionChart()
                     Spacer() 
                     ProductionChart()

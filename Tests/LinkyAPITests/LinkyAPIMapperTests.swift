@@ -148,5 +148,118 @@ final class LinkyAPIMapperTests: XCTestCase {
             XCTAssertEqual(item.value, value)
         }
     }
+    
+    func testRetunNullParamsLinkyContractsRaw() throws {
+        var entity = LinkyContractsMapper.rawToEntity(
+            raw: LinkyCustomerRaw(
+                customer: nil
+            )
+        )
+        XCTAssertEqual(entity.customer.customerId, "")
+        XCTAssertEqual(entity.customer.usagePoints.isEmpty, true)
+        
+        entity = LinkyContractsMapper.rawToEntity(
+            raw: LinkyCustomerRaw(
+                customer: LinkyContractsCustomerRaw(
+                    customer_id: "",
+                    usage_points:nil
+                )
+            )
+        )
+        XCTAssertEqual(entity.customer.customerId, "")
+        XCTAssertEqual(entity.customer.usagePoints.isEmpty, true)
+        
+        entity = LinkyContractsMapper.rawToEntity(
+            raw: LinkyCustomerRaw(
+                customer: LinkyContractsCustomerRaw(
+                    customer_id: nil,
+                    usage_points:[
+                        LinkyContractsUsagePointsRaw(
+                            usage_point: nil,
+                            contracts: nil
+                        )
+                    ]
+                )
+            )
+        )
+        XCTAssertEqual(entity.customer.customerId, "")
+        XCTAssertEqual(entity.customer.usagePoints.isEmpty, false)
+        for item in entity.customer.usagePoints {
+            XCTAssertEqual(item.usagePoint.usagePointId, "")
+            XCTAssertEqual(item.usagePoint.usagePointStatus, "")
+            XCTAssertEqual(item.usagePoint.meterType, "")
+            XCTAssertEqual(item.contracts.segment, "")
+            XCTAssertEqual(item.contracts.subscribedPower, "")
+            XCTAssertEqual(item.contracts.lastActivationDate, Date.null)
+            XCTAssertEqual(item.contracts.distributionTariff, "")
+            XCTAssertEqual(item.contracts.offpeakHours, "")
+            XCTAssertEqual(item.contracts.contractType, "")
+            XCTAssertEqual(item.contracts.contractStatus, "")
+            XCTAssertEqual(item.contracts.lastDistributionTariffChangeDate, Date.null)
+        }
+    }
+    
+    func testRetunNotNullParamsLinkyContractsRaw() throws {
+        let customer_id = "1358019319"
+        let usage_point_id =  "12345678910123"
+        let usage_point_status = "com"
+        let meter_type = "AMM"
+        let segment = "C5"
+        let subscribed_power = "9 kVA"
+        let last_activation_date = "2013-08-14+01:00"
+        let distribution_tariff = "BTINFCUST"
+        let offpeak_hours = "HC (23h00-7h30)"
+        let contract_type = "CRAE"
+        let contract_status = "SERVC"
+        let last_distribution_tariff_change_date = "2017-05-25+01:00"
+        
+        let entity = LinkyContractsMapper.rawToEntity(
+            raw: LinkyCustomerRaw(
+                customer: LinkyContractsCustomerRaw(
+                    customer_id: customer_id,
+                    usage_points: [
+                        LinkyContractsUsagePointsRaw(
+                            usage_point: LinkyContractsUsagePointRaw(
+                                usage_point_id: usage_point_id,
+                                usage_point_status: usage_point_status,
+                                meter_type: meter_type
+                            ),
+                            contracts: LinkyContractsRaw(
+                                segment: segment,
+                                subscribed_power: subscribed_power,
+                                last_activation_date: last_activation_date,
+                                distribution_tariff: distribution_tariff,
+                                offpeak_hours: offpeak_hours,
+                                contract_type: contract_type,
+                                contract_status: contract_status,
+                                last_distribution_tariff_change_date: last_distribution_tariff_change_date
+                            )
+                        )
+                    ]
+                )
+            )
+        )
+        XCTAssertEqual(entity.customer.customerId, customer_id)
+        XCTAssertEqual(entity.customer.usagePoints.isEmpty, false)
+        for item in entity.customer.usagePoints {
+            XCTAssertEqual(item.usagePoint.usagePointId, usage_point_id)
+            XCTAssertEqual(item.usagePoint.usagePointStatus, usage_point_status)
+            XCTAssertEqual(item.usagePoint.meterType, meter_type)
+            XCTAssertEqual(item.contracts.segment, segment)
+            XCTAssertEqual(item.contracts.subscribedPower, subscribed_power)
+            XCTAssertEqual(
+                item.contracts.lastActivationDate.ISO8601Format(),
+                last_activation_date.date().ISO8601Format()
+            )
+            XCTAssertEqual(item.contracts.distributionTariff, distribution_tariff)
+            XCTAssertEqual(item.contracts.offpeakHours, offpeak_hours)
+            XCTAssertEqual(item.contracts.contractType, contract_type)
+            XCTAssertEqual(item.contracts.contractStatus, contract_status)
+            XCTAssertEqual(
+                item.contracts.lastDistributionTariffChangeDate.ISO8601Format(),
+                last_distribution_tariff_change_date.date().ISO8601Format()
+            )
+        }
+    }
 
 }

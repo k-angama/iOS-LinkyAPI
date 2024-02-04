@@ -12,26 +12,19 @@ class LinkyServiceAPIMock: LinkyAPI {
 
     var account:LinkyAccount
     var configuration: LinkyConfiguration
+    
     var accessToken: LinkyAccessTokenRaw?
-    var accessTokenError: Error?
+    var accessTokenError: Error? = ErrorMock.valueNotSet
+    
+    var customerRaw: LinkyCustomerRaw?
+    var customerError: Error? = ErrorMock.valueNotSet
+    
+    var consumptionRaw: LinkyConsumptionRaw?
+    var consumptionError: Error? = ErrorMock.valueNotSet
     
     required init(configuration: LinkyConfiguration, account: LinkyAccount) {
         self.configuration = configuration
         self.account = account
-    }
-    
-    func getAccessToken() -> LinkyAccessTokenRaw? {
-        accessToken
-    }
-    func setAccessToken(token: LinkyAccessTokenRaw) {
-        self.accessToken = token
-    }
-    
-    func getErrorAccessToken() -> Error? {
-        accessTokenError
-    }
-    func setErrorAccessToken(error: Error) {
-        self.accessTokenError = error
     }
     
     func accessToken(block: @escaping (LinkyAccessTokenRaw?, Error?) -> Void) {
@@ -39,7 +32,11 @@ class LinkyServiceAPIMock: LinkyAPI {
     }
     
     func consumption(start: String, end: String, route: LinkyAPIRoute, block: @escaping (LinkyConsumptionRaw?, Error?) -> Void) {
-        //
+        block(consumptionRaw, consumptionError)
+    }
+    
+    func customer(route: LinkyAPIRoute, block: @escaping (LinkyCustomerRaw?, Error?) -> Void) { 
+        block(customerRaw, customerError)
     }
     
 }
