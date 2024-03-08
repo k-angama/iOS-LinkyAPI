@@ -36,6 +36,14 @@ public class LinkyAuthorization {
         }
     }
     
+    /// Indicates selected usage point id (PRM)
+    ///
+    public var usagePointIdSelected: String?  {
+        get {
+            return account.getUsagePointsId()
+        }
+    }
+    
     private(set) var configuration: LinkyConfiguration
     private(set) var account: LinkyAccount
     private(set) var serviceAPI: LinkyAPI
