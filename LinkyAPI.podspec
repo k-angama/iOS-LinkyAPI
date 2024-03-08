@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LinkyAPI'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.swift_version    = "5.0"
   s.summary          = 'API for Linky smart meters.'
 
